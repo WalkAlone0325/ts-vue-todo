@@ -4,13 +4,27 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
+	state: {
+		todoList: [
+			{
+				text: '学习typescript',
+				complete: false,
+			},
+			{
+				text: '学习vue',
+				complete: false,
+			},
+		],
+	},
+	mutations: {
+		updateTodoList(state, {index, content}) {
+			state.todoList[index].text = content;
+		},
+		todoItemComplete(state, index) {
+			state.todoList[index].complete = true;
+		},
+	},
+	actions: {
 
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  },
+	},
 });
